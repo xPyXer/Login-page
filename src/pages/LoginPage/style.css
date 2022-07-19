@@ -8,7 +8,7 @@
     background: #02010A;
 }
 .title {
-    color: #fff;
+    color: #1363DF;
 }   
 
 #login .form {
@@ -16,6 +16,7 @@
     width: 100%;
     max-width: 480px;
     padding: 0.5rem;
+    border-radius: 5px;
 }
 #login .field {
     padding-bottom: 0.5rem;
@@ -30,5 +31,4 @@
 #login .actions {
     text-align: center;
     margin-top: 0.5rem;
-
 }
