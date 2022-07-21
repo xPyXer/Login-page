@@ -4,12 +4,12 @@ import "./style.css"
 
 
 const LoginPage = () => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        console.log('Submit');
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log('Submit', { email, password });
     }
 
     return (
@@ -18,15 +18,15 @@ const LoginPage = () => {
             <form className="form" onSubmit={handleSubmit}>
                 <div className="field">
                     <label htmlFor="email">Email</label>
-                    <input type="email" name="email" id="email" value={email} onChange={(event) => (event.target.value)} placeholder='Insira seu email'/>
+                    <input type="email" name="email" id="email"  placeholder='Insira seu email' defaultValue={email} onChange={(e) => setEmail(e.target.value)} />
                 </div>
                 <div className="field">
                     <label htmlFor="password">Senha</label>
-                    <input type="password" name="password" id="password" value={password} onChange={(event) => (event.target.value)} placeholder='Insira sua senha'/>
+                    <input type="password" name="password" id="password" placeholder='Insira sua senha' defaultValue={password} onChange={(e) => setPassword(e.target.value)}/>
                 </div>
                 <div className="actions">
                     <button type="submit">Entrar</button>
-                </div>
+                </div> 
             </form>
         </div>
     );
@@ -34,3 +34,6 @@ const LoginPage = () => {
 
  export default LoginPage;
  
+
+ // Ao invés de utilizar value no component, substituir por defaultValue. Senão da erro e não é possível inserir os dados.
+ // Nunca esquecer de chamar a constant. Igual no setEmail
